@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Popup</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body Styling */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+    }
+
+    /* Main Container */
+    .container {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      width: 400px;
+    }
+
+    /* Logo Styling */
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo img {
+      width: 60%;
+    }
+
+    /* Title Styling */
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Button Styling */
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #f56c6c, #f8961e);
+      text-decoration: none;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, #f8961e, #f56c6c);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="icon.png" alt="Logo"> <!-- Replace with your logo -->
+    </div>
+    <h1>Welcome to Phishing Detector</h1>
+    <p>Click the button below to open the Phishing Detector page.</p>
+    <a href="popup.html" class="button">Open Phishing Detector</a>
+  </div>
+</body>
+</html>
