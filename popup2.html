@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header img {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>Phishing Detector</h3>
+        <img src="icon.png" alt="Logo">
+    </div>
+    <p>Enter a URL to check:</p>
+    <input type="text" id="url" placeholder="https://example.com">
+    <button id="checkButton">Check URL</button>
+    <p id="result"></p>
+
+    <script src="popup2.js"></script>
+</body>
+</html>
