@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Simulation Tool</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Body Styling */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+    }
+
+    /* Main Container */
+    .container {
+      width: 90%;
+      max-width: 600px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
+    }
+
+    .simulation-section {
+      margin-top: 20px;
+    }
+
+    .simulation-button {
+      margin: 10px 0;
+      padding: 12px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      background: #f8961e;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .simulation-button:hover {
+      background: #f56c6c;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      color: #fdd835;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Phishing Simulation Tool</h1>
+    <p>Test your awareness of phishing attacks by trying to identify which websites are safe and which are phishing attempts.</p>
+
+    <div class="simulation-section">
+      <button class="simulation-button" onclick="startSimulation()">Start Simulation</button>
+      <div id="simulation-feedback" class="feedback"></div>
+    </div>
+  </div>
+
+  <script>
+    const phishingSites = [
+      { url: 'http://secure-banking-login.com', isPhishing: true },
+      { url: 'https://google.com', isPhishing: false },
+      { url: 'http://paypal-security-alert.com', isPhishing: true },
+      { url: 'https://amazon.com', isPhishing: false },
+      { url: 'http://yourbank-online-verification.net', isPhishing: true },
+      { url: 'https://github.com', isPhishing: false },
+      { url: 'http://facebook-login-alert.net', isPhishing: true },
+      { url: 'https://twitter.com', isPhishing: false },
+      { url: 'http://apple-verification-service.com', isPhishing: true },
+      { url: 'https://microsoft.com', isPhishing: false },
+      { url: 'http://netflix-security-update.com', isPhishing: true },
+      { url: 'https://linkedin.com', isPhishing: false },
+      { url: 'http://amazon-prime-login-secure.net', isPhishing: true },
+      { url: 'https://bbc.com', isPhishing: false },
+      { url: 'http://instagram-security-login.com', isPhishing: true },
+      { url: 'https://tesla.com', isPhishing: false },
+      { url: 'http://ebay-account-update.net', isPhishing: true },
+      { url: 'https://stackoverflow.com', isPhishing: false },
+      { url: 'http://crypto-wallet-security.net', isPhishing: true },
+      { url: 'https://reddit.com', isPhishing: false },
+      { url: 'http://banking-verification-alert.org', isPhishing: true },
+      { url: 'https://wikipedia.org', isPhishing: false },
+      { url: 'http://gmail-security-check.com', isPhishing: true },
+      { url: 'https://nasa.gov', isPhishing: false }
+    ];
+
+    function startSimulation() {
+      const randomIndex = Math.floor(Math.random() * phishingSites.length);
+      const selectedSite = phishingSites[randomIndex];
+
+      const userResponse = confirm(`Is this website safe to visit?\n\n${selectedSite.url}`);
+
+      const feedback = document.getElementById('simulation-feedback');
+      if (userResponse === !selectedSite.isPhishing) {
+        feedback.textContent = `Correct! The website "${selectedSite.url}" is ${
+          selectedSite.isPhishing ? 'a phishing site.' : 'safe.'
+        }`;
+        feedback.style.color = '#4caf50'; // Green for correct
+      } else {
+        feedback.textContent = `Incorrect! The website "${selectedSite.url}" is ${
+          selectedSite.isPhishing ? 'a phishing site.' : 'safe.'
+        }`;
+        feedback.style.color = '#f44336'; // Red for incorrect
+      }
+    }
+  </script>
+</body>
+</html>
